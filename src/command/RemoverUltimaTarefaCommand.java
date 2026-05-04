@@ -21,6 +21,8 @@ public class RemoverUltimaTarefaCommand implements Command{
     public void undo() {
         if(tarefaRemovida != null) {
             gerenciador.adicionarTarefa(tarefaRemovida);
+            return;
         }
+
     }
 }
