@@ -6,10 +6,6 @@ import java.util.List;
 public class GerenciadorTarefas {
     private List<Tarefa> tarefas = new ArrayList<>();
 
-    public List<Tarefa> getTarefas() {
-        return tarefas;
-    }
-
     public void adicionarTarefa(Tarefa tarefa) {
         if (tarefa == null) {
             throw new IllegalArgumentException("Não foi possivel adicionar uma tarefa vazia!");
