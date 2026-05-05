@@ -1,11 +1,14 @@
 package tarefas;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class GerenciadorTarefas {
     private List<Tarefa> tarefas = new ArrayList<>();
+
+    public List<Tarefa> getTarefas() {
+        return tarefas;
+    }
 
     public void adicionarTarefa(Tarefa tarefa) {
         if (tarefa == null) {
@@ -15,7 +18,7 @@ public class GerenciadorTarefas {
         tarefas.add(tarefa);
     }
 
-    public Tarefa buscaPorDescricao(String descricao) {
+    public Tarefa buscar(String descricao) {
 
         for(Tarefa tarefa : tarefas) {
             if(tarefa.getDescricao().equalsIgnoreCase(descricao)) {
@@ -25,7 +28,7 @@ public class GerenciadorTarefas {
         return null;
     }
 
-    public Tarefa buscarPorIndex(int index) {
+    public Tarefa buscar(int index) {
 
         if (index < 0 || index >= tarefas.size()) {
             throw new IllegalArgumentException("Posição invalida dentro da lista de tarefas");
@@ -50,7 +53,7 @@ public class GerenciadorTarefas {
 
     }
 
-    public void reverterPorDescricao(String descricao) {
+    public void reverter(String descricao) {
         for (Tarefa tarefa : tarefas) {
             if (tarefa.getDescricao().equalsIgnoreCase(descricao)) {
                 tarefa.setConcluida(false);
@@ -63,7 +66,7 @@ public class GerenciadorTarefas {
 
     }
 
-    public void reverterPorIndex(int index) {
+    public void reverter(int index) {
         if (index < 0 || index >= tarefas.size()) {
             throw  new IllegalArgumentException("Posição invalida dentro da lista de tarefas");
 
@@ -74,7 +77,7 @@ public class GerenciadorTarefas {
 
 
     }
-    public void concluirTarefaDescricao(String descricao) {
+    public void concluirTarefa(String descricao) {
 
         for (Tarefa tarefa : tarefas) {
             if (tarefa.getDescricao().equalsIgnoreCase(descricao)) {
@@ -88,7 +91,7 @@ public class GerenciadorTarefas {
 
     }
 
-        public void concluirTarefaIndex ( int index) {
+        public void concluirTarefa( int index) {
 
             if (index < 0 || index >= tarefas.size()) {
                 throw  new IllegalArgumentException("Posição invalida dentro da lista de tarefas");

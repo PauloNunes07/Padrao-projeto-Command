@@ -20,8 +20,9 @@ public class RemoverUltimaTarefaCommand implements Command{
     @Override
     public void undo() {
         if(tarefaRemovida != null) {
+            tarefaRemovida.setConcluida(false);
             gerenciador.adicionarTarefa(tarefaRemovida);
-            return;
+
         }
 
     }

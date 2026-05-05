@@ -14,7 +14,7 @@ public class Main {
         System.out.println(" ============== Etapa 1 — execução imediata ==============");
         painel.executarComando(new AdicionarTarefaCommand(gerenciador, task1));
         painel.executarComando(new AdicionarTarefaCommand(gerenciador, task2));
-        painel.executarComando(new ConcluirTarefaCommand(gerenciador, "Estudar Command"));
+        painel.executarComando(new ConcluirTarefaCommand(gerenciador,  "Estudar Command"));
 
         System.out.println(" ============== Etapa 2 — desfazer ==============");
         painel.desfazerUltimoComando();
